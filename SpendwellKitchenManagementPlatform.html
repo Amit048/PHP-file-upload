@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spendwell - Kitchen Management Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'HelveticaNeue LT 53 Ex', Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 1920px;
+            height: 8130px;
+            background-color: #000000;
+        }
+
+        /* Header Styles */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1920px;
+            height: 80px;
+            background-color: #000000;
+            box-shadow: 0px 5px 15px rgba(115, 115, 115, 0.25);
+            display: flex;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            position: absolute;
+            left: 200px;
+            top: 14px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            position: absolute;
+            left: 265px;
+            top: 19px;
+            width: 182px;
+            height: 40px;
+        }
+
+        .nav-menu {
+            position: absolute;
+            left: 703px;
+            top: 28px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #d30808;
+        }
+
+        .auth-section {
+            position: absolute;
+            right: 200px;
+            top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .login-btn {
+            background: linear-gradient(70deg, #d30808 0%, rgba(220, 42, 36, 0) 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: absolute;
+            top: 79px;
+            left: 0;
+            width: 1920px;
+            height: 1074px;
+            background-image: url('../assets/images/img_new_project_2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 110px;
+            left: 410px;
+            width: 1100px;
+            text-align: center;
+        }
+
+        .welcome-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 38px;
+        }
+
+        .welcome-text {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .hero-title {
+            font-size: 58px;
+            font-weight: 300;
+            line-height: 78px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 40px;
+        }
+
+        .hero-title .highlight {
+            color: #d30808;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .get-started-btn {
+            background-color: #3b3b3b;
+            border: none;
+            border-radius: 23px;
+            padding: 15px 30px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .get-started-btn:hover {
+            background-color: #555555;
+        }
+
+        .action-btn {
+            background-color: #d30808;
+            border: none;
+            border-radius: 25px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .dashboard-preview {
+            position: absolute;
+            top: 328px;
+            left: 337px;
+            width: 1244px;
+            height: 665px;
+            border-radius: 15px;
+        }
+
+        /* About Section */
+        .about-section {
+            position: absolute;
+            top: 1177px;
+            left: 0;
+            width: 1920px;
+            height: 1770px;
+        }
+
+        .about-content {
+            position: absolute;
+            top: 46px;
+            left: 199px;
+            width: 1524px;
+            display: flex;
+            gap: 50px;
+        }
+
+        .about-images {
+            width: 654px;
+            height: 686px;
+            position: relative;
+        }
+
+        .about-text {
+            width: 683px;
+            height: 583px;
+            padding-top: 52px;
+        }
+
+        .section-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 68px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .section-title .highlight {
+            color: #d30808;
+        }
+
+        .section-description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 19px;
+            color: #ffffff;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            position: absolute;
+            top: 1951px;
+            left: 199px;
+            width: 1524px;
+            height: 995px;
+        }
+
+        .solutions-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .solutions-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .solution-item {
+            width: 304px;
+            text-align: center;
+        }
+
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .solution-title {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .configuration-panel {
+            background-color: rgba(249, 249, 249, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0px 4px 100px rgba(136, 136, 136, 1);
+            display: flex;
+            gap: 50px;
+        }
+
+        .config-content {
+            flex: 1;
+        }
+
+        .config-image {
+            width: 495px;
+            height: 483px;
+            border-radius: 30px;
+            border: 8px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Technology Section */
+        .tech-section {
+            position: absolute;
+            top: 3000px;
+            left: 159px;
+            width: 1597px;
+            height: 640px;
+        }
+
+        .tech-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tech-images {
+            width: 419px;
+            height: 566px;
+            position: relative;
+        }
+
+        .tech-text {
+            width: 1052px;
+        }
+
+        .tech-features {
+            display: flex;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .tech-feature-left {
+            flex: 1;
+        }
+
+        .tech-feature-right {
+            width: 494px;
+            background-color: #d30808;
+            border-radius: 30px;
+            padding: 20px;
+        }
+
+        /* Innovation Section */
+        .innovation-section {
+            position: absolute;
+            top: 3693px;
+            left: 200px;
+            width: 1522px;
+            height: 597px;
+        }
+
+        .innovation-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .innovation-text {
+            width: 733px;
+        }
+
+        .innovation-visual {
+            width: 788px;
+            height: 341px;
+            position: relative;
+        }
+
+        .contact-form {
+            margin-top: 50px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-input {
+            flex: 1;
+            height: 80px;
+            background-color: rgba(184, 184, 184, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            color: #ffffff;
+            font-size: 20px;
+            box-shadow: 0px 4px 100px rgba(136, 136, 136, 1);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Features Section */
+        .features-section {
+            position: absolute;
+            top: 4359px;
+            left: 0;
+            width: 1920px;
+            height: 2110px;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .feature-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 371px;
+        }
+
+        .feature-card {
+            background-color: rgba(27, 27, 27, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0px 4px 100px rgba(136, 136, 136, 1);
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-image {
+            width: 600px;
+            height: 415px;
+            border-radius: 12px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .feature-description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #f5f5f4;
+            margin-bottom: 30px;
+        }
+
+        /* Advantages Section */
+        .advantages-section {
+            position: absolute;
+            top: 5852px;
+            left: 310px;
+            width: 1300px;
+            height: 435px;
+        }
+
+        .advantages-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+        }
+
+        .advantage-item {
+            width: 356px;
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: 41px;
+            height: 40px;
+            margin: 0 auto 20px;
+        }
+
+        .advantage-title {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .advantage-description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #b8b8b8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            position: absolute;
+            top: 6323px;
+            left: 310px;
+            width: 1300px;
+            height: 853px;
+        }
+
+        .faq-content {
+            display: flex;
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .faq-visual {
+            width: 491px;
+            height: 599px;
+            position: relative;
+        }
+
+        .faq-list {
+            width: 728px;
+        }
+
+        .faq-item {
+            background-color: rgba(216, 216, 216, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0px 4px 100px rgba(136, 136, 136, 1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #ffffff;
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            background-color: #d30808;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #ffffff;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active {
+            background-color: #d30808;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: absolute;
+            top: 7239px;
+            left: 325px;
+            width: 1270px;
+            height: 469px;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 180px;
+            font-weight: 800;
+            line-height: 216px;
+            text-transform: uppercase;
+            color: #e8e8e8;
+            position: relative;
+        }
+
+        .cta-button {
+            position: absolute;
+            top: 128px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            background-color: #d30808;
+            border-radius: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .cta-button-text {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 21px;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            top: 7702px;
+            left: 0;
+            width: 1920px;
+            height: 492px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .footer-content {
+            display: flex;
+            padding: 61px 325px 0;
+            gap: 50px;
+        }
+
+        .footer-left {
+            width: 438px;
+        }
+
+        .footer-logo {
+            width: 289px;
+            height: 82px;
+            margin-bottom: 30px;
+        }
+
+        .footer-description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .footer-phone {
+            background: transparent;
+            border: 1px solid #d30808;
+            border-radius: 27px;
+            padding: 15px 30px;
+            color: #d30808;
+            font-size: 22px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .footer-email {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 28px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .footer-email-address {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            color: #ffffff;
+        }
+
+        .footer-right {
+            flex: 1;
+            display: flex;
+            gap: 50px;
+        }
+
+        .footer-column {
+            flex: 1;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #d30808;
+            margin-bottom: 30px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: #d30808;
+        }
+
+        .footer-bottom {
+            position: absolute;
+            bottom: 30px;
+            left: 325px;
+            right: 325px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 30px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 15px;
+            color: #ffffff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border: 1px solid #d30808;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #d30808;
+        }
+        .welcome-text1 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            margin-left: 8px;
+        }
+        
+        .rotated-text {
+            display: inline-block;
+            transform: rotate(180deg);
+        }
+        .main-content {
+            position: relative;
+            z-index: 2;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 100%;
+                height: auto;
+            }
+
+            .header {
+                width: 100%;
+                padding: 0 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                width: 90%;
+                left: 5%;
+            }
+
+            .hero-title {
+                font-size: 36px;
+                line-height: 48px;
+            }
+
+            .about-content,
+            .tech-content,
+            .innovation-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .solutions-grid,
+            .advantages-grid {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .faq-content {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+           
+           
+            
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fchiragsa6694back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.4"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Background Vector -->
+        <img src="../assets/images/img_vector.png" alt="Background" style="position: absolute; top: 430px; left: 0; width: 1920px; height: 8747px; z-index: 1;" />
+        <div class="main-content">
+        <!-- Header -->
+            <header class="header">
+                <img src="../assets/images/img_vector_red_700_01.svg" alt="Logo" class="logo" />
+                <div class="logo-text">
+                    <img src="../assets/images/img_group_1707485521.svg" alt="Spendwell" style="width: 182px; height: 18px;" />
+                    <img src="../assets/images/img_vector_red_700_01_11x110.svg" alt="Tagline" style="position: absolute; top: 29px; width: 110px; height: 11px;" />
+                </div>
+                <nav class="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <img src="../assets/images/img_symbol.svg" alt="Dropdown" style="width: 9px; height: 10px;" />
+                    <a href="#about" class="nav-link">About Us</a>
+                    <a href="#contact" class="nav-link">Contact Us</a>
+                </nav>
+                <div class="auth-section">
+                    <img src="../assets/images/img_switch.svg" alt="Switch" style="width: 66px; height: 37px;" />
+                    <button class="login-btn" onclick="handleLogin()">Log in / Sign Up</button>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-section" id="home">
+                <div class="hero-content">
+                    <div class="welcome-badge">
+                        <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                        <span class="welcome-text">welcome to Spendwell</span>
+                    </div>
+                    <h1 class="hero-title">
+                        One Tool To Manage Your<br />
+                        <span class="highlight">Kitchen Operations</span>
+                    </h1>
+                    <div class="hero-buttons">
+                        <button class="get-started-btn" onclick="handleGetStarted()">Get Started</button>
+                        <button class="action-btn" onclick="handleDemo()">
+                            <img src="../assets/images/img_component_1_white_a700.svg" alt="Play" style="width: 24px; height: 24px;" />
+                        </button>
+                    </div>
+                </div>
+                <img src="../assets/images/img_dashboard_2.png" alt="Dashboard Preview" class="dashboard-preview" />
+                
+                <!-- Floating Cards -->
+                <div style="position: absolute; top: 418px; left: 199px; width: 238px; height: 145px; background-color: #222222; border-radius: 14px; box-shadow: 0px 20px 50px rgba(195, 234, 243, 0.15); padding: 15px;">
+                    <div style="font-size: 6px; color: #f0f0f0; margin-bottom: 5px;">Total earning</div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                        <span style="font-size: 13px; font-weight: 600; color: #ffffff;">$13,690</span>
+                        <span style="font-size: 6px; font-weight: 600; color: #1dab45;">36%</span>
+                        <img src="../assets/images/img_icon.svg" alt="Up" style="width: 7px; height: 7px;" />
+                    </div>
+                    <!-- Chart bars -->
+                    <div style="display: flex; gap: 2px; height: 56px; align-items: end;">
+                        <div style="width: 6px; height: 41px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 33px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 17px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 45px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 28px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 33px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 41px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 17px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 28px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 45px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 41px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 45px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 28px; background-color: #ff7700; border-radius: 3px;"></div>
+                        <div style="width: 6px; height: 33px; background-color: #ff7700; border-radius: 3px;"></div>
+                    </div>
+                </div>
+                
+                <div style="position: absolute; top: 831px; right: 171px; width: 270px; height: 93px; background-color: #222222; border-radius: 20px; box-shadow: 0px 0px 51px rgba(112, 112, 112, 0.25); padding: 20px; display: flex; align-items: center; gap: 20px;">
+                    <div>
+                        <div style="font-size: 10px; color: #f0f0f0; margin-bottom: 5px;">This week</div>
+                        <div style="font-size: 20px; font-weight: 600; color: #ffffff;">$13,690</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <span style="font-size: 9px; font-weight: 600; color: #1dab45;">36%</span>
+                        <img src="../assets/images/img_icon.svg" alt="Up" style="width: 10px; height: 10px;" />
+                    </div>
+                    <div style="position: relative; width: 120px; height: 50px;">
+                        <img src="../assets/images/img_vector_6.svg" alt="Chart" style="width: 120px; height: 33px;" />
+                        <img src="../assets/images/img_icon_black_900.svg" alt="Point" style="position: absolute; top: 10px; right: 7px; width: 13px; height: 13px;" />
+                    </div>
+                </div>
+                
+                <img src="../assets/images/img_vector_red_300.svg" alt="Decoration" style="position: absolute; top: 249px; left: 286px; width: 82px; height: 73px;" />
+                <img src="../assets/images/img_vector_red_300_88x95.svg" alt="Decoration" style="position: absolute; top: 945px; right: 274px; width: 95px; height: 88px;" />
+            </section>
+
+            <!-- About Section -->
+            <section class="about-section" id="about">
+                <div class="about-content">
+                    <div class="about-images">
+                        <div style="position: relative; width: 654px; height: 686px;">
+                            <div style="position: absolute; top: 92px; left: 3px; width: 349px; height: 466px; background-image: url('../assets/images/img_.png'); border-radius: 30px; padding: 20px;">
+                                <img src="../assets/images/img_12120_1.png" alt="Kitchen Staff" style="width: 348px; height: 466px; border-radius: 30px;" />
+                            </div>
+                            <div style="position: absolute; top: 0; right: 0; width: 340px; height: 644px;">
+                                <div style="position: absolute; top: 0; right: 0; width: 331px; height: 188px; background-image: url('../assets/images/img__0x0.png'); border-radius: 30px; padding: 10px;">
+                                    <img src="../assets/images/img_121586_1.png" alt="Kitchen Operations" style="width: 331px; height: 188px; border-radius: 30px;" />
+                                </div>
+                                <div style="position: absolute; bottom: 0; left: 0; width: 302px; height: 418px; position: relative;">
+                                    <div style="position: absolute; top: 101px; left: 47px; width: 255px; height: 316px; background-image: url('../assets/images/img__1.png'); border-radius: 30px; padding: 10px;">
+                                        <img src="../assets/images/img_1735_1.png" alt="Analytics" style="width: 255px; height: 309px; border-radius: 30px;" />
+                                    </div>
+                                    <img src="../assets/images/img_exploremorecirclepng.png" alt="Explore More" style="position: absolute; top: 0; left: 0; width: 167px; height: 173px; border-radius: 83px; cursor: pointer;" onclick="exploreMore()" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <div class="section-badge">
+                            <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                            <span class="welcome-text">About us</span>
+                        </div>
+                        <h2 class="section-title">
+                            Innovation that drives your<br />
+                            <span class="highlight">Business Forward</span>
+                        </h2>
+                        <p class="section-description">
+                            We harness cutting-edge technology to deliver scalable, efficient, and intuitive solutions Our mission is to empower your business. Our kitchen management software is built on continuous innovation—introducing intelligent automation, real-time analytics, and seamless integrations that simplify operations and unlock new growth opportunities.
+                        </p>
+                        <ul class="feature-list">
+                            <li class="feature-item">
+                                <img src="../assets/images/img_symbol_red_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                streamlined solutions designed to scale with your business
+                            </li>
+                            <li class="feature-item">
+                                <img src="../assets/images/img_symbol_red_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                empowering teams with tools that deliver results
+                            </li>
+                            <li class="feature-item">
+                                <img src="../assets/images/img_symbol_red_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                Access new features and improvements without disruption.
+                            </li>
+                            <li class="feature-item">
+                                <img src="../assets/images/img_symbol_red_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                Manage kitchen operations from anywhere, anytime
+                            </li>
+                        </ul>
+                        <div class="hero-buttons">
+                            <button class="get-started-btn" onclick="knowMore()">Know More</button>
+                            <button class="action-btn">
+                                <img src="../assets/images/img_component_1_white_a700.svg" alt="Arrow" style="width: 24px; height: 24px;" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <img src="../assets/images/img_sales_report_3d_animated_icon_1.png" alt="3D Icon" style="position: absolute; bottom: 461px; right: 49px; width: 352px; height: 338px;" />
+            </section>
+
+            <!-- Solutions Section -->
+            <section class="solutions-section" id="features">
+                <div class="solutions-header">
+                    <div class="section-badge" style="justify-content: center;">
+                        <img src="../assets/images/img_component_1_red_a700.svg" alt="Icon" style="width: 16px; height: 17px;" />
+                        <span class="welcome-text">Solutions</span>
+                    </div>
+                    <h2 class="section-title" style="text-align: center;">
+                        Future-Ready Solutions<br />
+                        <span class="highlight">Tailored for you</span>
+                    </h2>
+                </div>
+                <div class="solutions-grid">
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <img src="../assets/images/img_accessible.svg" alt="Automation" style="width: 60px; height: 60px;" />
+                        </div>
+                        <h3 class="solution-title">Automation</h3>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <img src="../assets/images/img_margin.svg" alt="Analytics" style="width: 60px; height: 80px;" />
+                        </div>
+                        <h3 class="solution-title">Analytics</h3>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <img src="../assets/images/img_component_1_black_900.svg" alt="Customization" style="width: 25px; height: 25px;" />
+                        </div>
+                        <h3 class="solution-title">Customization</h3>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <img src="../assets/images/img_component_1_black_900_60x60.svg" alt="Scalability" style="width: 60px; height: 60px;" />
+                        </div>
+                        <h3 class="solution-title">Scalability</h3>
+                    </div>
+                    <div class="solution-item">
+                        <div class="solution-icon">
+                            <img src="../assets/images/img_component_1_60x60.svg" alt="Support" style="width: 60px; height: 60px;" />
+                        </div>
+                        <h3 class="solution-title">Support</h3>
+                    </div>
+                </div>
+                <div class="configuration-panel">
+                    <div class="config-content">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                            <img src="../assets/images/img_component_1_red_a700_20x20.png" alt="Icon" style="width: 20px; height: 20px;" />
+                            <h3 style="font-size: 20px; color: #ffffff;">Flexible Configurations</h3>
+                        </div>
+                        <p style="font-size: 16px; line-height: 32px; color: #888888; margin-bottom: 30px;">
+                            With flexible configuration options, you can customize workflows, user roles, reporting formats, and operational settings to match your kitchen's exact needs.
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                            <img src="../assets/images/img_component_1_red_a700_20x20.png" alt="Icon" style="width: 20px; height: 20px;" />
+                            <h3 style="font-size: 20px; color: #ffffff;">Custom Dashboards</h3>
+                        </div>
+                        <p style="font-size: 16px; line-height: 32px; color: #888888; margin-bottom: 30px;">
+                            Visualize the metrics that matter most with customizable dashboards tailored to your kitchen operations. Choose from a variety of widgets and data views—inventory levels, order status, cost tracking, staff performance, and more.
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                            <img src="../assets/images/img_component_1_red_a700_20x20.png" alt="Icon" style="width: 20px; height: 20px;" />
+                            <h3 style="font-size: 20px; color: #ffffff;">Custom Workflows</h3>
+                        </div>
+                        <p style="font-size: 16px; line-height: 32px; color: #888888;">
+                            Streamline daily operations with workflows that adapt to your kitchen's unique structure. From inventory approval chains to multi-step order processes, our system allows you to create, modify, and automate workflows that mirror your real-world practices.
+                        </p>
+                    </div>
+                    <div class="config-image" style="border: 8px solid rgba(255, 255, 255, 0.15); border-radius: 30px; padding: 40px;">
+                        <img src="../assets/images/img_0datamatrix1920x1080.png" alt="Configuration Interface" style="width: 448px; height: 433px; border-radius: 30px 0px 0px 0px;" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology Section -->
+            <section class="tech-section">
+                <div class="tech-content">
+                    <div class="tech-images">
+                        <div style="position: relative; width: 419px; height: 566px;">
+                            <img src="../assets/images/img_1735_1_566x419.png" alt="Technology" style="position: absolute; top: 0; left: 0; width: 419px; height: 566px; border-radius: 30px;" />
+                            <div style="position: absolute; top: 0; left: 0; width: 419px; height: 566px; border-top: 8px solid #f7d0d0; border-bottom: 8px solid #f7d0d0; border-right: 8px solid #f7d0d0; border-radius: 30px; background-image: url('../assets/images/img__2.png');">
+                                <img src="../assets/images/img_freepikuntitledcreation20250531_1_1.png" alt="Kitchen Tech" style="width: 419px; height: 566px; border-radius: 30px;" />
+                                <img src="../assets/images/img_0peopleafricanamerican1080x1920_1.png" alt="Staff" style="position: absolute; top: 0; left: 0; width: 419px; height: 566px; border-radius: 30px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-text">
+                        <div class="section-badge">
+                            <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                            <span class="welcome-text">Why choose us</span>
+                        </div>
+                        <h2 class="section-title">
+                            Experience Seamless Technology<br />
+                            <span class="highlight">Designed For Your Growth</span>
+                        </h2>
+                        <div class="tech-features">
+                            <div class="tech-feature-left">
+                                <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                                    <img src="../assets/images/img_component_1_red_a700_41x40.svg" alt="Innovation" style="width: 40px; height: 41px;" />
+                                    <div>
+                                        <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">Innovative solutions</h3>
+                                        <p style="font-size: 16px; line-height: 24px; color: #b8b8b8;">Track and manage incoming and outgoing orders in real time with complete accuracy.</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                                    <img src="../assets/images/img_component_1_41x40.svg" alt="Security" style="width: 40px; height: 41px;" />
+                                    <div>
+                                        <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">Security first</h3>
+                                        <p style="font-size: 16px; line-height: 24px; color: #b8b8b8;">Enterprise-grade security to protect your kitchen data—encrypted, compliant, and reliable.</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 20px;">
+                                    <img src="../assets/images/img_component_1_1.svg" alt="Support" style="width: 40px; height: 41px;" />
+                                    <div>
+                                        <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">Dedicated support</h3>
+                                        <p style="font-size: 16px; line-height: 24px; color: #b8b8b8;">24/7 support from people who understand kitchen operations. Expert support, whenever you need it</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tech-feature-right">
+                                <p style="font-size: 16px; line-height: 24px; color: #ffffff; margin-bottom: 20px;">
+                                    With our cutting-edge saas experience seamless integration, intuitive design, and powerful functionality.
+                                </p>
+                                <p style="font-size: 16px; line-height: 24px; color: #ffffff; margin-bottom: 20px;">
+                                    We provide the tools you need to optimize workflows enhance product.
+                                </p>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <img src="../assets/images/img_symbol_white_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                        <span style="font-size: 16px; color: #ffffff;">Empowering Teams With Tools</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <img src="../assets/images/img_symbol_white_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                        <span style="font-size: 16px; color: #ffffff;">Cutting-edge SaaS technologyz</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <img src="../assets/images/img_symbol_white_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                        <span style="font-size: 16px; color: #ffffff;">Secure and reliable infrastructure</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                        <img src="../assets/images/img_symbol_white_a700.svg" alt="Check" style="width: 17px; height: 17px;" />
+                                        <span style="font-size: 16px; color: #ffffff;">Effortless setup and onboarding</span>
+                                    </li>
+                                    <li style="display: flex; align-items: flex-start; gap: 10px;">
+                                        <img src="../assets/images/img_symbol_white_a700.svg" alt="Check" style="width: 17px; height: 17px; margin-top: 5px;" />
+                                        <span style="font-size: 16px; line-height: 24px; color: #ffffff;">Access new features and improvements without disruption.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="../assets/images/img_vector_amber_400.svg" alt="Decoration" style="position: absolute; top: -159px; left: 0; width: 56px; height: 53px;" />
+                <img src="../assets/images/img_vector_amber_400_53x56.svg" alt="Decoration" style="position: absolute; bottom: 54px; right: 220px; width: 56px; height: 53px;" />
+                <img src="../assets/images/img_sales_analytics_3d_animated_icon_1.png" alt="3D Analytics" style="position: absolute; bottom: -1610px; left: 0; width: 337px; height: 334px;" />
+            </section>
+
+            <!-- Innovation Section -->
+            <section class="innovation-section">
+                <div class="innovation-content">
+                    <div class="innovation-text">
+                        <div class="section-badge">
+                            <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                            <span class="welcome-text">innovation</span>
+                        </div>
+                        <h2 class="section-title">
+                            Empowering you Success<br />
+                            <span class="highlight">Through Innovation</span>
+                        </h2>
+                        <p style="font-size: 16px; line-height: 24px; color: #888888; margin-bottom: 30px;">
+                            At the heart of our kitchen management platform is a commitment to innovation that drives real results. We combine cutting-edge technology with a deep understanding of kitchen workflows.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="get-started-btn" style="background-color: rgba(255, 255, 255, 0.2);" onclick="contactUs()">contact us</button>
+                            <button class="action-btn">
+                                <img src="../assets/images/img_component_1_white_a700.svg" alt="Arrow" style="width: 24px; height: 24px;" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="innovation-visual">
+                        <div style="position: relative; width: 788px; height: 341px;">
+                            <div style="position: absolute; bottom: 0; right: 0; width: 581px; height: 256px; background: linear-gradient(0deg, #d30808 0%, #000000 100%); border-radius: 20px;"></div>
+                            <div style="position: absolute; top: 0; right: 0; width: 430px; height: 341px; background-image: url('../assets/images/img_group_1000014238.png'); border-radius: 10px; padding: 20px;">
+                                <img src="../assets/images/img_dashboard_2_230x409.png" alt="Dashboard" style="width: 409px; height: 230px; border-radius: 6px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div style="margin-top: 50px;">
+                    <div class="form-row">
+                        <input type="text" class="form-input" placeholder="First Name" id="firstName" />
+                        <input type="text" class="form-input" placeholder="Last Name" id="lastName" />
+                        <input type="email" class="form-input" placeholder="Email Address" id="email" />
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" class="form-input" placeholder="Phone Number" id="phone" />
+                        <input type="text" class="form-input" placeholder="Company Name" id="company" />
+                        <input type="text" class="form-input" placeholder="Job Title" id="jobTitle" />
+                    </div>
+                </div>
+                
+                <img src="../assets/images/img_profit_3d_animated_icon_1.png" alt="3D Profit" style="position: absolute; bottom: -44px; right: 0; width: 319px; height: 303px;" />
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <div class="features-header">
+                    <div class="section-badge" style="justify-content: center;">
+                        <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                        <span class="welcome-text">features</span>
+                    </div>
+                    <h2 class="section-title" style="text-align: center;">
+                        Your Success Starts with <span class="highlight">Smarter Features</span>
+                    </h2>
+                </div>
+                <div class="feature-cards">
+                    <div class="feature-card" style="width: 108%;">
+                        <div class="feature-content">
+                            <h3 class="feature-title">
+                                Real-Time Data Analytics Delivering Actionable Insights to Help Businesses Make Smarter, Faster Decisions
+                            </h3>
+                            <p class="feature-description">
+                                Harness the power of live data to drive smarter, faster decisions across your kitchen operations. Our analytics engine continuously tracks key performance metrics—from ingredient usage and order patterns to supplier efficiency and cost trends—providing clear, actionable insights in real time.
+                            </p>
+                            <div class="hero-buttons">
+                                <button class="get-started-btn" style="background-color: rgba(255, 255, 255, 0.2);" onclick="contactUs()">contact us</button>
+                                <button class="action-btn">
+                                    <img src="../assets/images/img_component_1_white_a700.svg" alt="Arrow" style="width: 24px; height: 24px;" />
+                                </button>
+                            </div>
+                        </div>
+                        <img src="../assets/images/img_dashboard_2_415x600.png" alt="Analytics Dashboard" class="feature-image" />
+                    </div>
+                    
+                    <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+                        <div class="feature-card" style="width: 620px;">
+                            <div style="padding: 50px;">
+                                <h3 class="feature-title">
+                                    Intuitive Dashboards Designed for Effortless Navigation & Productivity
+                                </h3>
+                                <p class="feature-description">
+                                    Our dashboards are crafted with usability at the core—so your team can focus on productivity, not learning curves. With clean layouts, drag-and-drop widgets, and context-aware navigation, every feature is right where you expect it.
+                                </p>
+                                <img src="../assets/images/img_figure_featureimage2jpg.png" alt="Dashboard Interface" style="width: 443px; height: 237px; border-radius: 10px 0px 0px 0px; margin-top: 20px;" />
+                            </div>
+                        </div>
+                        
+                        <div class="feature-card" style="width: 620px;">
+                            <div style="padding: 50px; position: relative;">
+                                <h3 class="feature-title">
+                                    Customizable Solutions Built to Match Your Unique Business Needs
+                                </h3>
+                                <p class="feature-description">
+                                    No two kitchens operate the same—and that's why our platform is built for flexibility.
+                                </p>
+                                <div style="position: relative; margin-top: 30px; width: 100%; height: 227px;">
+                                    <img src="../assets/images/img_figure_featureimage3jpg.png" alt="Customization" style="width: 478px; height: 227px; border-radius: 10px 0px 0px 0px;" />
+                                    <img src="../assets/images/img_companyearnimagejpg.png" alt="Company" style="position: absolute; top: 0; left: 0; width: 350px; height: 116px; border-radius: 10px;" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advantages Section -->
+            <section class="advantages-section" style="margin-bottom: 20px;">
+                <div class="advantages-header">
+                    <div class="section-badge" style="justify-content: center;">
+                        <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                        <span class="welcome-text">advantages</span>
+                    </div>
+                    <h2 class="section-title" style="text-align: center;">
+                        Transforming business<br />
+                        advantage <span class="highlight">with Spendwell</span>
+                    </h2>
+                </div>
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <img src="../assets/images/img_component_1_black_900_41x40.svg" alt="Efficiency" class="advantage-icon" />
+                        <h3 class="advantage-title">Operational Efficiency</h3>
+                        <p class="advantage-description">
+                            Streamline kitchen operations with automated workflows, real-time inventory tracking, & order management
+                        </p>
+                    </div>
+                    <div style="width: 1px; height: 167px; background-color: rgba(255, 255, 255, 0.5);"></div>
+                    <div class="advantage-item">
+                        <img src="../assets/images/img_component_1_black_900_40x40.svg" alt="Decisions" class="advantage-icon" />
+                        <h3 class="advantage-title">Data-Driven Decisions</h3>
+                        <p class="advantage-description">
+                            Make smarter, faster decisions with live dashboards and actionable insights. Identify inefficiencies, monitor costs.
+                        </p>
+                    </div>
+                    <div style="width: 1px; height: 167px; background-color: rgba(255, 255, 255, 0.5);"></div>
+                    <div class="advantage-item">
+                        <img src="../assets/images/img_component_1_2.svg" alt="Management" class="advantage-icon" />
+                        <h3 class="advantage-title">Employee Management</h3>
+                        <p class="advantage-description">
+                            Tailor the platform to your business with single outlet or a multi-location brand. With customizable modules
+                        </p>
+                    </div>
+                </div>
+                
+                <img src="../assets/images/img_analytics_3d_animated_icon_1.png" alt="3D Analytics" style="position: absolute; bottom: -445px; right: -144px; width: 421px; height: 380px;" />
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="faq-header">
+                    <div class="section-badge" style="justify-content: center;">
+                        <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                        <span class="welcome-text ">faq</span>
+
+                    </div>
+                    <h2 class="section-title" style="text-align: center;">
+                        Common Questions About Our<br />
+                        <span class="highlight">Spendwell System</span>
+                    </h2>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-visual">
+                        <div style="position: relative; width: 491px; height: 599px;">
+                            <div style="position: absolute; top: 0; left: 0; width: 382px; height: 368px; background-image: url('../assets/images/img__3.png'); border-radius: 30px; padding: 20px;">
+                                <img src="../assets/images/img_7248_1.png" alt="FAQ Visual" style="width: 382px; height: 368px; border-radius: 30px;" />
+                            </div>
+                            <img src="../assets/images/img_freepikuntitledcreation20250531_4_1.png" alt="FAQ Support" style="position: absolute; bottom: 56px; right: 0; width: 273px; height: 375px; border-radius: 30px;" />
+                            <div style="position: absolute; bottom: 0; left: 0; width: 170px; height: 211px; background-color: #d30808; border-radius: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                <img src="../assets/images/img_component_1_white_a700_68x68.svg" alt="Help Icon" style="width: 68px; height: 68px; margin-bottom: 20px;" />
+                                <span style="font-size: 22px; font-weight: 700; line-height: 26px; color: #ffffff; text-transform: capitalize;">need help?<br />ask!</span>
+                            </div>
+                        </div>
+                        <div style="position: absolute; top: -10px; right: -28px; font-size: 60px; font-weight: 800; line-height: 85px; letter-spacing: 9px; text-transform: uppercase; color: #ffffff; writing-mode: vertical-rl;" class="rotated-text">FAQ</div>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What is kitchen management software?</h3>
+                                <div class="faq-toggle">
+                                    <img src="../assets/images/img_background.svg" alt="Plus" style="width: 24px; height: 24px;" />
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                Kitchen management software is a comprehensive solution designed to streamline and optimize restaurant and food service operations through automation, analytics, and workflow management.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item active">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Who is this software built for?</h3>
+                                <div class="faq-toggle">
+                                    <img src="../assets/images/img_background_red_a700.svg" alt="Minus" style="width: 24px; height: 24px;" />
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                Our platform is ideal for restaurants, cloud kitchens, cafes, hotels, and food service businesses looking to optimize their operations and reduce manual workload.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What level of customer support do you provide?</h3>
+                                <div class="faq-toggle">
+                                    <img src="../assets/images/img_background.svg" alt="Plus" style="width: 24px; height: 24px;" />
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                We provide 24/7 customer support with dedicated account managers, comprehensive onboarding, training resources, and ongoing technical assistance.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Is my data secure with your platform?</h3>
+                                <div class="faq-toggle">
+                                    <img src="../assets/images/img_background.svg" alt="Plus" style="width: 24px; height: 24px;" />
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, we use enterprise-grade security with end-to-end encryption, regular security audits, and compliance with industry standards to protect your data.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Is the software easy to use for non-technical staff?</h3>
+                                <div class="faq-toggle">
+                                    <img src="../assets/images/img_background.svg" alt="Plus" style="width: 24px; height: 24px;" />
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                Absolutely! Our interface is designed with simplicity in mind, featuring intuitive navigation and comprehensive training materials for all skill levels.
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Do you support multi-location kitchens or restaurant chains?</h3>
+                                <div class="faq-toggle">
+                                    <img src="../assets/images/img_background.svg" alt="Plus" style="width: 24px; height: 24px;" />
+                                </div>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, our platform is designed to scale from single locations to multi-location chains with centralized management and location-specific customization.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="section-badge" style="justify-content: center;">
+                    <img src="../assets/images/img_component_1.png" alt="Icon" style="width: 16px; height: 16px;" />
+                    <span class="welcome-text">Let's Collaborate</span>
+                </div>
+                <div style="position: relative; margin-top: 40px;">
+                    <h2 class="cta-title">Let's Work<br />Together</h2>
+                    <div class="cta-button" onclick="getInTouch()">
+                        <img src="../assets/images/img_component_1_white_a700.svg" alt="Contact" style="width: 24px; height: 24px;" />
+                        <span class="cta-button-text">Get in Touch</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <img src="../assets/images/img_image_58.png" alt="Spendwell Logo" class="footer-logo" />
+                        <p class="footer-description">
+                            Quality Work with No Limits. SaaS Made Simple & Successful.
+                        </p>
+                        <button class="footer-phone" onclick="callUs()">+123 456 789</button>
+                        <div>
+                            <h3 class="footer-email">E-mail</h3>
+                            <p class="footer-email-address">domainame@gmail.com</p>
+                        </div>
+                    </div>
+                    <div style="width: 1px; height: 370px; background-color: rgba(255, 255, 255, 0.15);"></div>
+                    <div class="footer-right">
+                        <div class="footer-column">
+                            <h3>Quick Link</h3>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Features</h3>
+                            <ul>
+                                <li><a href="#prep">Prep Management</a></li>
+                                <li><a href="#orders">Order Management</a></li>
+                                <li><a href="#inventory">Inventory Management</a></li>
+                                <li><a href="#analytics">Analytics</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <ul style="margin-top: 57px;">
+                                <li><a href="#scheduler">Schedular & Shift Managment</a></li>
+                                <li><a href="#items">Item Management</a></li>
+                                <li><a href="#reports">Reports</a></li>
+                                <li><a href="#employees">Employee Management</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">Copyright © 2025 All Rights Reserved.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" onclick="openSocial('facebook')">
+                            <img src="../assets/images/img_component_19.svg" alt="Facebook" style="width: 20px; height: 20px;" />
+                        </a>
+                        <a href="#" class="social-link" onclick="openSocial('twitter')">
+                            <img src="../assets/images/img_component_19_red_a700.svg" alt="Twitter" style="width: 20px; height: 20px;" />
+                        </a>
+                        <a href="#" class="social-link" onclick="openSocial('linkedin')">
+                            <img src="../assets/images/img_component_19_red_a700_36x36.svg" alt="LinkedIn" style="width: 20px; height: 20px;" />
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Navigation functionality
+        function handleLogin() {
+            alert('Redirecting to login page...');
+            // Simulate login redirect
+            console.log('Login button clicked');
+        }
+
+        function handleGetStarted() {
+            alert('Welcome to Spendwell! Let\'s get you started.');
+            // Simulate getting started flow
+            document.querySelector('#features').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleDemo() {
+            alert('Starting product demo...');
+            // Simulate demo start
+            console.log('Demo button clicked');
+        }
+
+        function exploreMore() {
+            alert('Exploring more features...');
+            document.querySelector('#features').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function knowMore() {
+            alert('Learning more about our solutions...');
+            document.querySelector('#features').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function contactUs() {
+            alert('Thank you for your interest! Our team will contact you soon.');
+            // Simulate contact form submission
+            const firstName = document.getElementById('firstName')?.value || 'Guest';
+            console.log(`Contact request from: ${firstName}`);
+        }
+
+        function getInTouch() {
+            alert('Let\'s work together! Redirecting to contact form...');
+            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function callUs() {
+            alert('Calling +123 456 789...');
+            // Simulate phone call
+            console.log('Phone call initiated');
+        }
+
+        function openSocial(platform) {
+            alert(`Opening ${platform} page...`);
+            console.log(`Social link clicked: ${platform}`);
+        }
+
+        // FAQ functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add form validation
+            const formInputs = document.querySelectorAll('.form-input');
+            formInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.style.borderColor = '#d30808';
+                    } else {
+                        this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                    }
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add hover effects to buttons
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add loading states for form submissions
+            const contactButtons = document.querySelectorAll('button[onclick*="contactUs"]');
+            contactButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const originalText = this.textContent;
+                    this.textContent = 'Sending...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.disabled = false;
+                    }, 2000);
+                });
+            });
+
+            // Initialize animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections for animation
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+
+        // Add dynamic chart animation
+        function animateCharts() {
+            const chartBars = document.querySelectorAll('[style*="background-color: #ff7700"]');
+            chartBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.transform = 'scaleY(0)';
+                    bar.style.transformOrigin = 'bottom';
+                    bar.style.transition = 'transform 0.5s ease';
+                    
+                    setTimeout(() => {
+                        bar.style.transform = 'scaleY(1)';
+                    }, 100);
+                }, index * 100);
+            });
+        }
+
+        // Initialize chart animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(animateCharts, 1000);
+        });
+
+        // Add responsive menu toggle for mobile
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Add search functionality (placeholder)
+        function handleSearch(query) {
+            console.log(`Searching for: ${query}`);
+            alert(`Searching for: ${query}`);
+        }
+
+        // Add newsletter signup
+        function subscribeNewsletter(email) {
+            if (email && email.includes('@')) {
+                alert('Thank you for subscribing to our newsletter!');
+                console.log(`Newsletter subscription: ${email}`);
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // Add feature tour functionality
+        function startFeatureTour() {
+            const features = ['#home', '#about', '#features', '#contact'];
+            let currentFeature = 0;
+            
+            function showNextFeature() {
+                if (currentFeature < features.length) {
+                    document.querySelector(features[currentFeature]).scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                    currentFeature++;
+                    setTimeout(showNextFeature, 3000);
+                }
+            }
+            
+            showNextFeature();
+        }
+    </script>
+</body>
+</html>
